@@ -11,10 +11,18 @@ function buildMainCharacter(name, age, pronouns) {
   return character;
 }
 
+function saveReview(review, listOfReviews) {
+  if (listOfReviews.includes(review)) {
+    return;
+  } else {
+    listOfReviews.push(review);
+  }
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
