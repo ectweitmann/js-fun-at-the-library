@@ -24,9 +24,22 @@ function listTitles(specificShelf) {
   return listOfTitles;
 }
 
+function searchShelf(specificShelf, titleOfBook) {
+  var hasBook = false;
+  for (var i = 0; i < specificShelf.length; i++) {
+    if (specificShelf[i].title === titleOfBook) {
+      hasBook = true;
+      return hasBook;
+    } else {
+      hasBook = false;
+    }
+  }
+  return hasBook;
+}
+
 module.exports = {
   shelfBook,
   unshelfBook,
   listTitles,
-  // searchShelf
+  searchShelf
 };
