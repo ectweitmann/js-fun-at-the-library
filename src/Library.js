@@ -11,15 +11,16 @@ function createLibrary(name) {
 }
 
 function addBook(library, book) {
-  var properShelf = book.genre;
-  if (properShelf === "fantasy") {
+  if (book.genre === "fantasy") {
     library.shelves.fantasy.push(book);
-  } else if (properShelf === "fiction") {
+  } else if (book.genre === "fiction") {
     library.shelves.fiction.push(book);
-  } else if (properShelf === "nonFiction") {
+  } else if (book.genre === "nonFiction") {
     library.shelves.nonFiction.push(book);
   }
 }
+
+
 
 module.exports = {
   createLibrary,
