@@ -21,20 +21,19 @@ function addBook(library, book) {
 }
 
 function checkoutBook(library, title, genre) {
-  if (genre === "fantasy" && library.shelves.fantasy[0] !== undefined) {
+  if (genre === "fantasy" && library.shelves.fantasy.length > 0) {
     library.shelves.fantasy.splice(0, 1);
     return `You have now checked out ${title} from the ${library.name}`;
-  } else if (genre === "fiction" && library.shelves.fiction[0] !== undefined) {
+  } else if (genre === "fiction" && library.shelves.fiction.length > 0) {
     library.shelves.fiction.splice(0, 1);
     return `You have now checked out ${title} from the ${library.name}`;
-  } else if (genre === "nonFiction" && library.shelves.nonFiction[0] !== undefined) {
+  } else if (genre === "nonFiction" && library.shelves.nonFiction.length > 0) {
     library.shelves.nonFiction.splice(0, 1);
     return `You have now checked out ${title} from the ${library.name}`;
   } else {
     return `Sorry, there are currently no copies of ${title} available at the ${library.name}`;
   }
 }
-
 
 module.exports = {
   createLibrary,
